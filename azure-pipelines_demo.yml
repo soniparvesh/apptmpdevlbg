@@ -1,0 +1,12 @@
+trigger:
+- master
+
+pool:
+ name: Default
+
+stages:
+ - stage: A
+   jobs:
+     - job: Ajob
+       steps:
+         - script: echo "Script A"
