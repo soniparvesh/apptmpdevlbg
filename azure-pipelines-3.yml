@@ -1,0 +1,15 @@
+pool:
+  name: Default
+
+stages:
+  - stage: Test
+    jobs:
+      - job: TestJob
+
+  - stage: QA
+    jobs:
+      - job: QAJob
+
+  - stage: Prod
+    jobs:
+      - job: ProdJob
