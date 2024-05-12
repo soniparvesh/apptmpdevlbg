@@ -11,5 +11,6 @@ stages:
       - job: QAJob
 
   - stage: Prod
+    dependsOn: Test
     jobs:
       - job: ProdJob
