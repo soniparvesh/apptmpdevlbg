@@ -1,14 +1,13 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- main
-
 pool:
   name: Default
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script without stage explicitly define'
+stages:
+  - stage: stageA
+    displayName: "this is stage A"
+    jobs:
+      - job: JobA
+  - stage: stageB
+    displayName: "this is stage B"
+    jobs:
+      - job: JobB
+
