@@ -1,0 +1,15 @@
+pool:
+  name: Default
+
+stages:
+  - stage: Stage1
+    jobs:
+     - job: Job1
+
+     - job: Job2
+
+  - stage: Stage2
+    dependsOn: []
+    jobs:
+      - job: job2
+
