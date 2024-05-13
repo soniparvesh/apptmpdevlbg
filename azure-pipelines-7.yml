@@ -1,0 +1,25 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: A
+    jobs:
+      - job: jobA
+        steps:
+          - task: Maven@4
+
+            displayName: "TaskName is a"
+            continueOnError: true
+            timeoutInMinutes: 20
+            inputs:
+              mavenPomFile: 'POM.file'
+              goals: 'verify'
+              publishJUnitResults: false
+              javaHomeOption: 'JDKVersion'
+              mavenVersionOption: 'Default'
+              mavenAuthenticateFeed: false
+              effectivePomSkip: false
+              sonarQubeRunAnalysis: false
