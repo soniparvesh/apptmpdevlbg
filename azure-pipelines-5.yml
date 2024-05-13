@@ -1,0 +1,12 @@
+pool:
+  name: Default
+
+stages:
+  - stage: A
+    jobs:
+      - job: A
+
+  - stage: B
+    condition: failed()
+    jobs:
+      - job: B
