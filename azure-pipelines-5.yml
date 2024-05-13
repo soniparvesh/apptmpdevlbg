@@ -9,6 +9,6 @@ stages:
           - task: Maven@4
 
   - stage: B
-    condition: failed()
+    condition: succeeded('A')
     jobs:
       - job: B
