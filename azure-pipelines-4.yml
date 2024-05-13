@@ -16,7 +16,7 @@ stages:
     jobs:
       - job: job3
 
-  - stage: Stage3
+  - stage: Stage4
     dependsOn: 
     - Stage2
     - Stage3
