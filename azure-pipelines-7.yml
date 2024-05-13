@@ -9,17 +9,9 @@ stages:
     jobs:
       - job: jobA
         steps:
-          - task: Maven@4
-
-            displayName: "TaskName is a"
-            continueOnError: true
-            timeoutInMinutes: 20
-            inputs:
-              mavenPomFile: 'POM.file'
-              goals: 'verify'
-              publishJUnitResults: false
-              javaHomeOption: 'JDKVersion'
-              mavenVersionOption: 'Default'
-              mavenAuthenticateFeed: false
-              effectivePomSkip: false
-              sonarQubeRunAnalysis: false
+        - task: PowerShell@1
+          inputs:
+            scriptType: 'inlineScript'
+            inlineScript: |
+              write-Host "Hello World"
+            failOnStandardError: false
