@@ -1,0 +1,18 @@
+trigger: none
+
+pool:
+  name: Default
+
+stages:
+  - stage: Deploy
+    jobs:
+      - deployment: Test
+        environment: Test
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+                - script: echo "This is my first deployment demo"
+                
+
