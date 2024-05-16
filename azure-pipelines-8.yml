@@ -1,0 +1,17 @@
+trigger:
+- main
+
+pool:
+parameters:
+  - name: Image
+    displayName: PoolImage
+    default: Default
+    type: string
+    values:
+      - window-latest
+      - Default
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
